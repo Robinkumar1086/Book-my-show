@@ -4,7 +4,7 @@ const authMiddleware = require('../middlewars/authMiddleware');
 
 router.get('/get-all-movies', authMiddleware , async (req,res)=>{
   try {
-    const movies = await Movies.find();
+    const movies = await Movies.find().select('title description postUrl');
     res.send({
         success: true,
         message: "movies fatched",
@@ -19,7 +19,7 @@ router.get('/get-all-movies', authMiddleware , async (req,res)=>{
   }
 })
 
-router.get('/get-movie-by-id/:id',authMiddleware , async(req,res)=>{
+router.get('/get-movie-by-id/id',authMiddleware , async(req,res)=>{
     try {
         const movie = await Movies.findById(req.params.id);
         res.send({
@@ -38,7 +38,7 @@ router.get('/get-movie-by-id/:id',authMiddleware , async(req,res)=>{
 
 
 
-router.post('/add-movie' ,authMiddleware , async(req,res)=>{
+router.post('/add-movie'  , async(req,res)=>{
    try {
        const movie = new Movies(req.body);
        await movie.save();

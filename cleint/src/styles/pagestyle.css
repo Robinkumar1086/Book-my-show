@@ -14,7 +14,7 @@
 .form-cover h3{
     margin-top: 0;
 }
-button{
+.form-cover button{
     width: 100%;
 }
 .ant-form-item{
@@ -80,7 +80,7 @@ nav .dropdown-list button{
 
 /*    Home > Movies-card      */
 
-.movies> div{
+.movies{
     display: flex;
     flex-wrap: wrap;
 }
@@ -96,12 +96,14 @@ nav .dropdown-list button{
 .Movie-card .movie-img img{
     width: 100%;
     border-radius: 10px ;
+    max-height: 355px;
     
 }
 .Movie-card .movie-info{
     background-color: #fff;
     padding:10px;
     border-radius: 0 0 10px 10px;
+    min-height: 109px;
 }
 .Movie-card .movie-info h4{
    font-size: 20px;
@@ -115,3 +117,33 @@ nav .dropdown-list button{
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
  }
+
+
+/*    Admin panel      */
+ .Movie-list-item{
+    background-color: #fff;
+    padding: 10px 10px;
+    margin: 10px 0;
+ }
+ .Movie-list-item p{
+    margin: 10px 0 0 0;
+ }
+ .Movie-cards  .Add{
+    text-align: right;
+ }
+ .ant-drawer-content-wrapper{
+    width: 650px !important;
+ }
+ .Movie-list-item div{
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+ }
+ .Movie-list-item div button{
+    padding: 5px;
+    background-color: red;
+    color: #fff;
+    border-radius: 2px;
+    border: 1px solid red;
+ }
+ 

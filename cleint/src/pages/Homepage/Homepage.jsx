@@ -11,6 +11,7 @@ function Homepage() {
   if(isError){
     return <p>Something went wrong...</p>
   }
+  
   return (
     <>
     <div className='movies'>

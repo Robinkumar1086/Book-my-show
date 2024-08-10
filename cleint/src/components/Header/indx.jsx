@@ -26,7 +26,7 @@ const Header = () => {
    }
    function logout(){
     localStorage.removeItem("scaler-token");
-    dispatch(setUser(resetUser));
+    dispatch(resetUser());
     navigate("/login");
    }
    function firstCapitalLetter(name){

@@ -10,6 +10,7 @@ const LoginPage = lazy(() => import("./pages/LoginPage"));
 const Adminprofile= lazy(()=> import("./pages/Adminprofile"))
 const Userprofile= lazy(()=> import("./pages/profile/index.jsx"))
 const Appcontainer= lazy(()=> import("./routes/Appcontainer.jsx"))
+const MovieDetails= lazy(()=> import("./pages/moviedetails.jsx"))
 
 export default function App() {
   return (
@@ -32,6 +33,7 @@ function AppContent() {
             <Route index="true" element = {<Appcontainer><Homepage/></Appcontainer>}/> 
             <Route path="/admin" element = {<Adminprofile/>}/> 
             <Route path="/user" element = {<Userprofile/>}/> 
+            <Route path="/movie/:id" element={<MovieDetails />} />
           </Route>
 
           <Route path="/login" element={<LoginPage />} />

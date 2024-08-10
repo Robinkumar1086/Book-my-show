@@ -1,10 +1,18 @@
-import React from 'react'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Moviecard = (props) => {
-    const {title, description , postUrl} = props.movie;
+
+    const {title, description , postUrl , _id} = props.movie;
+
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+      navigate(`/movie/${_id}`);
+    };
+    
   return (
-    <div>
-      <div className='Movie-card'>
+    <div className='Movie-card' onClick={handleClick}>
         <div className='movie-img'>
             <img src={postUrl} alt={title}/>
         </div>
@@ -13,7 +21,6 @@ const Moviecard = (props) => {
             <p>{description}</p>
         </div>
       </div>
-    </div>
   )
 }
 
